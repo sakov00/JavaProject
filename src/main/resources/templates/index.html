@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<script src="webjars/jquery/3.3.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<h1>Welcome</h1>
+<form th:action="@{/autorization}"
+      th:object="${user}" method="POST">
+    <p>Login:
+        <input type="text" th:field="*{Login}"/>
+    </p>
+    <p>Password:
+        <input type="text" th:field="*{Password}"/>
+    </p>
+    <input class ="button-main-page" type="submit" value="Input" />
+</form>
+<p></p>
+<a th:href="@{/registration}">Registration For User</a>
+<div th:if="${errorMessageAutorisation}" th:utext="${errorMessageAutorisation}"
+     style="color:#ff0000;font-style:italic;">
+</div>
+</body>
+</html>

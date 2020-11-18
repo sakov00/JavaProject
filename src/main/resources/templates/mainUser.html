@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Computer List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+
+<div class="container">
+    <table class ="container" border="1">
+        <tr>
+            <th><h1>Id</h1></th>
+            <th><h1>Name</h1></th>
+            <th><h1>OS</h1></th>
+        </tr>
+        <tr th:each ="computer : ${computers}">
+            <td th:utext="${computer.getId()}"></td>
+            <td th:utext="${computer.getName()}">...</td>
+            <td th:utext="${computer.getOS()}">...</td>
+        </tr>
+    </table>
+</div>
+<p></p>
+<table class ="container" border="1">
+    <tr>
+        <th><h1>Id</h1></th>
+        <th><h1>Name</h1></th>
+        <th><h1>OS</h1></th>
+    </tr>
+    <tr th:each ="computer : ${findcomputers}">
+        <td th:utext="${computer.getId()}">...</td>
+        <td th:utext="${computer.getName()}">...</td>
+        <td th:utext="${computer.getOS()}">...</td>
+    </tr>
+</table>
+<p></p>
+<button th:href="@{/addComputer}">Get computer</button>
+<form th:action="@{/findComputerForField}"
+             th:object="${computer}" method="POST">
+    <p>Name:
+        <input type="text" th:field="*{Name}"/>
+    </p>
+    <p>OS:
+        <input type="text" th:field="*{OS}"/>
+    </p>
+    <input class ="button-main-page" type="submit" value="Find computer" />
+</form>
+<form th:action="@{/chooseComputer}"
+      th:object="${computer}" method="POST">
+    <p>Id computer:
+        <input type="text" th:field="*{Id}"/>
+    </p>
+    <input class ="button-main-page" type="submit" value="Сhoose computer" />
+</form>
+<table class ="container" border="1">
+    <tr>
+        <th><h1>Id</h1></th>
+        <th><h1>Name</h1></th>
+        <th><h1>OS</h1></th>
+    </tr>
+    <tr th:each ="computer : ${Choosecomputersforuser}">
+        <td th:utext="${computer.getId()}">...</td>
+        <td th:utext="${computer.getName()}">...</td>
+        <td th:utext="${computer.getOS()}">...</td>
+    </tr>
+</table>
+</body>
+</html>

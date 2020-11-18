@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Add Computer</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div class="container">
+    <h1>New User:</h1>
+    <form th:action="@{/registration}"
+          th:object="${user}" method="POST">
+        <p>Name:
+            <input type="text" th:field="*{Login}" />
+        </p>
+        <p>Password:
+            <input type="text" th:field="*{Password}" />
+        </p>
+        <input class ="button-main-page" type="submit" value="Add" />
+    </form>
+</div>
+<div th:if="${errorMessage}" th:utext="${errorMessage}"
+     style="color:#ff0000;font-style:italic;">
+</div>
+</body>
+</html>

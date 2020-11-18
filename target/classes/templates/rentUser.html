@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>formforrent</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div class="container">
+    <h1>Complete the form</h1>
+    <form th:action="@{/completeform}"
+          th:object="${rentuser}" method="POST">
+        <p>First name:
+            <input type="text" th:field="*{FirstName}" />
+        </p>
+        <p>Second name:
+            <input type="text" th:field="*{SecondName}" />
+        </p>
+        <p>Count of rental days:
+            <input type="text" th:field="*{CountOfRentalDays}" />
+        </p>
+        <input class ="button-main-page" type="submit" value="Add" />
+    </form>
+</div>
+</body>
+</html>

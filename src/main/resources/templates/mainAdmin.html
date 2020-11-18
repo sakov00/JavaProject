@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Admin</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div class="container">
+    <table class ="container" border="1">
+        <tr>
+            <th><h1>Id</h1></th>
+            <th><h1>Name</h1></th>
+        </tr>
+        <tr th:each ="user : ${users}">
+            <td th:utext="${user.getId()}">...</td>
+            <td th:utext="${user.getLogin()}">...</td>
+        </tr>
+    </table>
+    <p></p>
+    <table class ="container" border="1">
+        <tr>
+            <th><h1>Id</h1></th>
+            <th><h1>Name</h1></th>
+            <th><h1>OS</h1></th>
+        </tr>
+        <tr th:each ="computer : ${computers}">
+            <td th:utext="${computer.getId()}">...</td>
+            <td th:utext="${computer.getName()}">...</td>
+            <td th:utext="${computer.getOS()}">...</td>
+        </tr>
+    </table>
+</div>
+<p></p>
+<form th:action="@{addComputer}" target="_blank">
+    <button>Add computer</button>
+</form>
+<form th:action="@{updateComputer}" target="_blank">
+    <button>update or delete computer</button>
+</form>
+
+<div th:if="${errorMessage}" th:utext="${errorMessage}"
+     style="color:#ff0000;font-style:italic;">
+</div>
+</body>
+</html>
