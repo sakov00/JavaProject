@@ -1,28 +1,83 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
 </head>
-<body>
-<script src="webjars/jquery/3.3.1/jquery.min.js"></script>
-<script src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<h1>Welcome</h1>
-<form th:action="@{/autorization}"
-      th:object="${user}" method="POST">
-    <p>Login:
-        <input type="text" th:field="*{Login}"/>
-    </p>
-    <p>Password:
-        <input type="text" th:field="*{Password}"/>
-    </p>
-    <input class ="button-main-page" type="submit" value="Input" />
-</form>
-<p></p>
-<a th:href="@{/registration}">Registration For User</a>
-<div th:if="${errorMessageAutorisation}" th:utext="${errorMessageAutorisation}"
-     style="color:#ff0000;font-style:italic;">
+<br>
+<script th:src="@{../js/index.js}"></script>
+<script th:src="@{../js/elems.js}"></script>
+<script th:src="@{../js/api/user_rent_api.js}"></script>
+<script th:src="@{../js/api/computer_stuff_api.js}"></script>
+<script th:src="@{../js/api/user.js}"></script>
+<script th:src="@{../js/admin.js}"></script>
+<script th:src="@{../js/general.js}"></script>
+<script th:src="@{../js/user.js}"></script>
+<script>
+    window.onload = load;
+</script>
+
+<div class="container">
+    <h3>All users and computers of this site </h3>
+    <div class="row">
+
+        <div class="col-sm">
+            <div class="results">
+
+            </div>
+            <div class="nextPrev">
+
+            </div>
+            <div class="logOut">
+
+            </div>
+            <div class="logReg">
+
+            </div>
+        </div>
+        <div class="col-sm">
+            <input type="hidden">
+            <div class="personalInfo">
+
+            </div>
+            <div class="create">
+
+            </div>
+            <div class="update">
+
+            </div>
+            <div class="delete">
+
+            </div>
+            <div class="search">
+
+            </div>
+            <div id="errMes">
+
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="someList">
+
+            </div>
+        </div>
+
+    </div>
 </div>
-</body>
+<div class="neededInfo">
+
+</div>
+
+
 </html>
