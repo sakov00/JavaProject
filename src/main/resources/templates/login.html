@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -15,6 +15,7 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
 </head>
+<body>
 <script th:src="@{../js/index.js}"></script>
 <script th:src="@{../js/elems.js}"></script>
 <script th:src="@{../js/api/card_document.js}"></script>
@@ -25,13 +26,12 @@
 <script th:src="@{../js/admin.js}"></script>
 <script th:src="@{../js/general.js}"></script>
 <script th:src="@{../js/user.js}"></script>
-<body>
-<h3>Reg</h3>
 
+<h3>Auth</h3>
 <input type="text" id="login" placeholder="login"><br>
-<input type="password" id="password" placeholder="password"><br>
-<input type="email" id="email" placeholder="email">
-<button onclick="reg()">Submit</button><br>
+<input type="password" id="password" placeholder="password">
+
+<button onclick="login()">Submit</button><br>
 <a href="/">home</a><br>
 <div id="message"></div>
 </body>
